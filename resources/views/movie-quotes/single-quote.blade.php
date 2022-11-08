@@ -6,7 +6,7 @@
             <h1 class="text-5xl mt-[65px] my-[114px] text-white leading-11 font-normal text-center">
                 "{{ $quote->quote }}"
             </h1>
-            <a href="/movie/{{ $quote->movie_id }}"
+            <a href="{{ route('movie', ['id' => $quote->movie_id]) }}"
                 class=" underline font-normal text-white leading-11 text-5xl text-center">
                 {{ $quote->movie->name }}
             </a>
