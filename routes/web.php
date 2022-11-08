@@ -14,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [QuoteController::class, 'index']);
+Route::get('/', [QuoteController::class, 'index'])->name('quote');
 
-Route::view('/movie/{id}', 'movie-quotes.movie-quotes');
+Route::view('/movie/{id}', 'movie-quotes.movie-quotes')->name('movie');
