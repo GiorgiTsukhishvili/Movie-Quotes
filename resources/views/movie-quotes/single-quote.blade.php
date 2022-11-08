@@ -1,5 +1,12 @@
 <x-layout>
     <x-slot name='content'>
+        <div class="absolute flex flex-col gap-3.5 top-[473px] left-14">
+
+            <x-buttons.language-button :lang="'en'" :route="'/'" />
+            <x-buttons.language-button :lang="'ka'" :route="'/'" />
+
+        </div>
+
         <div class="w-full h-full flex flex-col items-center">
             <img src="{{ asset(is_null($quote->photo) ? 'images/placeholder.jpg' : $quote->photo) }}" alt="placeholder"
                 class="w-[700px] h-[386px] rounded-lx mt-[228px]">

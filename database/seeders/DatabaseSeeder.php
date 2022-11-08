@@ -18,19 +18,19 @@ class DatabaseSeeder extends Seeder
 		$movieName = new Movie();
 		$movieName
 		   ->setTranslation('name', 'en', fake()->sentence())
-		   ->setTranslation('name', 'ge', 'რაღაც ქართული სახელი')
+		   ->setTranslation('name', 'ka', 'რაღაც ქართული სახელი')
 		   ->save();
 
 		$movieName2 = new Movie();
 		$movieName2
 		   ->setTranslation('name', 'en', fake()->sentence())
-		   ->setTranslation('name', 'ge', 'რაღაც ქართული სახელი')
+		   ->setTranslation('name', 'ka', 'რაღაც ქართული სახელი')
 		   ->save();
 
 		$movieName3 = new Movie();
 		$movieName3
 		   ->setTranslation('name', 'en', fake()->sentence())
-		   ->setTranslation('name', 'ge', 'რაღაც ქართული სახელი')
+		   ->setTranslation('name', 'ka', 'რაღაც ქართული სახელი')
 		   ->save();
 
 		for ($i = 0; $i < 10; $i++)
@@ -38,20 +38,20 @@ class DatabaseSeeder extends Seeder
 			$movieQuote = new Quote();
 			$movieQuote
 				  ->setTranslation('quote', 'en', fake()->sentence())
-				  ->setTranslation('quote', 'ge', 'რაღაც ქართული ტექსტი')
+				  ->setTranslation('quote', 'ka', 'რაღაც ქართული ტექსტი')
 				  ->setAttribute('movie_id', $movieName->id)
 				  ->setAttribute('photo', 'images/placeholder.jpg')->save();
 
 			$movieQuote2 = new Quote();
 			$movieQuote2
 						->setTranslation('quote', 'en', fake()->sentence())
-						->setTranslation('quote', 'ge', 'რაღაც ქართული ტექსტი')
+						->setTranslation('quote', 'ka', 'რაღაც ქართული ტექსტი')
 						->setAttribute('movie_id', $movieName2->id)
 						->setAttribute('photo', 'images/placeholder.jpg')->save();
 			$movieQuote3 = new Quote();
 			$movieQuote3
 						->setTranslation('quote', 'en', fake()->sentence())
-						->setTranslation('quote', 'ge', 'რაღაც ქართული ტექსტი')
+						->setTranslation('quote', 'ka', 'რაღაც ქართული ტექსტი')
 						->setAttribute('movie_id', $movieName3->id)
 						->setAttribute('photo', 'images/placeholder.jpg')->save();
 		}
