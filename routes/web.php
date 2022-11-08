@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-	return view('movieQuotes.single-quote');
-});
+Route::view('/', 'movie-quotes.single-quote');
 
-Route::get('/movie/{id}', function () {
-	return view('movieQuotes.movie-quotes');
-});
+Route::view('/movie/{id}', 'movie-quotes.movie-quotes');
