@@ -2,7 +2,8 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Movie;
+use App\Models\Quote;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,11 +15,45 @@ class DatabaseSeeder extends Seeder
 	 */
 	public function run()
 	{
-		// \App\Models\User::factory(10)->create();
+		$movieName = new Movie();
+		$movieName
+		   ->setTranslation('name', 'en', fake()->sentence())
+		   ->setTranslation('name', 'ge', 'რაღაც ქართული სახელი')
+		   ->save();
 
-		// \App\Models\User::factory()->create([
-		//     'name' => 'Test User',
-		//     'email' => 'test@example.com',
-		// ]);
+		$movieName2 = new Movie();
+		$movieName2
+		   ->setTranslation('name', 'en', fake()->sentence())
+		   ->setTranslation('name', 'ge', 'რაღაც ქართული სახელი')
+		   ->save();
+
+		$movieName3 = new Movie();
+		$movieName3
+		   ->setTranslation('name', 'en', fake()->sentence())
+		   ->setTranslation('name', 'ge', 'რაღაც ქართული სახელი')
+		   ->save();
+
+		for ($i = 0; $i < 10; $i++)
+		{
+			$movieQuote = new Quote();
+			$movieQuote
+				  ->setTranslation('quote', 'en', fake()->sentence())
+				  ->setTranslation('quote', 'ge', 'რაღაც ქართული ტექსტი')
+				  ->setAttribute('movie_id', $movieName->id)
+				  ->setAttribute('photo', 'images/placeholder.jpg')->save();
+
+			$movieQuote2 = new Quote();
+			$movieQuote2
+						->setTranslation('quote', 'en', fake()->sentence())
+						->setTranslation('quote', 'ge', 'რაღაც ქართული ტექსტი')
+						->setAttribute('movie_id', $movieName2->id)
+						->setAttribute('photo', 'images/placeholder.jpg')->save();
+			$movieQuote3 = new Quote();
+			$movieQuote3
+						->setTranslation('quote', 'en', fake()->sentence())
+						->setTranslation('quote', 'ge', 'რაღაც ქართული ტექსტი')
+						->setAttribute('movie_id', $movieName3->id)
+						->setAttribute('photo', 'images/placeholder.jpg')->save();
+		}
 	}
 }
