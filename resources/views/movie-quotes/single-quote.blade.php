@@ -2,8 +2,8 @@
     <x-slot name='content'>
         <div class="absolute flex flex-col gap-3.5 top-[473px] left-14">
 
-            <x-buttons.language-button :lang="'en'" :route="'/'" />
-            <x-buttons.language-button :lang="'ka'" :route="'/'" />
+            <x-buttons.language-button :lang="'en'" :route="route('quote')" />
+            <x-buttons.language-button :lang="'ka'" :route="route('quote')" />
 
         </div>
 
