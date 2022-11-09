@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MovieController;
 use App\Http\Controllers\QuoteController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [QuoteController::class, 'index'])->name('quote');
 
-Route::view('/movie/{id}', 'movie-quotes.movie-quotes')->name('movie');
+Route::get('/movie/{id}', [MovieController::class, 'index'])->name('movie');
