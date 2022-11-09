@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
+use App\Models\Quote;
 
 class AdminQuotesController extends Controller
 {
@@ -14,5 +15,12 @@ class AdminQuotesController extends Controller
 		}
 
 		return view('admin.admin-quotes', ['movie' => $id]);
+	}
+
+	public function destroy(Quote $id)
+	{
+		$id->delete();
+
+		return back()->with('message', '');
 	}
 }

@@ -56,7 +56,7 @@
         </div>
 
 
-
+        <x-flash-message :en="'Quote was deleted'" :ka="'ციტატა წაიშალა'" />
 
     </x-slot>
 </x-layout>

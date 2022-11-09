@@ -6,7 +6,7 @@
         </div>
 
         <div class="min-h-screen flex justify-center items-center ">
-            <div class="px-4 sm:px-6 lg:px-8 pt-6 bg-white min-h-[800px] rounded-lg w-187.5">
+            <div class="px-4 sm:px-6 lg:px-8 pt-6 bg-white min-h-[800px] rounded-lg w-[1200px]">
                 <div class="sm:flex sm:items-center">
                     <div class="sm:flex-auto">
                         <h1 class="text-2xl font-semibold text-gray-900">
@@ -53,5 +53,7 @@
             </div>
 
         </div>
+
+        <x-flash-message :en="'Movie was deleted'" :ka="'ფილმი წაიშალა'" />
     </x-slot>
 </x-layout>

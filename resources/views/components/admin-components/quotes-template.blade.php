@@ -13,7 +13,12 @@
             class="text-indigo-600 text-xl hover:text-indigo-900">{{ app()->getLocale() === 'en' ? 'Edit' : 'შესწორება' }}<span>
     </td>
     <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-        <a href="#"
-            class="text-red-600 text-xl hover:text-red-900">{{ app()->getLocale() === 'en' ? 'Delete' : 'წაშლა' }}<span>
+        <form method="POST" action="{{ route('quote.delete', ['id' => $quote->id]) }}">
+            @csrf
+            @method('delete')
+
+            <button
+                class="text-red-600 text-xl hover:text-red-900">{{ app()->getLocale() === 'en' ? 'Delete' : 'წაშლა' }}<a>
+        </form>
     </td>
 </tr>

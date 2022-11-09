@@ -10,7 +10,12 @@
             class="text-indigo-600 hover:text-indigo-900">{{ app()->getLocale() === 'en' ? 'Edit' : 'შესწორება' }}<span>
     </td>
     <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-xl font-medium sm:pr-6">
-        <a href="#"
-            class="text-red-600 hover:text-red-900">{{ app()->getLocale() === 'en' ? 'Delete' : 'წაშლა' }}<span>
+        <form method="POST" action="{{ route('movie.delete', ['id' => $id]) }}">
+            @csrf
+            @method('delete')
+
+            <button
+                class="text-red-600 text-xl hover:text-red-900">{{ app()->getLocale() === 'en' ? 'Delete' : 'წაშლა' }}<a>
+        </form>
     </td>
 </tr>
