@@ -13,7 +13,7 @@
 
 </head>
 
-<body class="bg-gradient-radial from-neutral-650 via-neutral-700 to-neutral-700 min-h-[100vh]">
+<body class="bg-gradient-radial from-neutral-650 via-neutral-700 to-neutral-700 min-h-screen">
 
     {{ $content }}
 
