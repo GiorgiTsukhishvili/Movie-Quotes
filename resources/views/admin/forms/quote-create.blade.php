@@ -1,12 +1,12 @@
 <x-layout>
     <x-slot name='content'>
-        {{-- <div class="fixed flex flex-col gap-3.5 top-[473px] left-14">
+        <div class="fixed flex flex-col gap-3.5 top-[473px] left-14">
             <x-buttons.language-button :lang="'en'" :route="route('admin.movie-create')" />
             <x-buttons.language-button :lang="'ka'" :route="route('admin.movie-create')" />
-        </div> --}}
+        </div>
 
 
-        <form method="POST" {{-- action="{{ route('admin.quote-store') }}" --}}>
+        <form method="POST" action="{{ route('admin.quote-store') }}">
 
             @csrf
 
