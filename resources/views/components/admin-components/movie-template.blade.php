@@ -6,16 +6,14 @@
     </td>
 
     <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-xl font-medium sm:pr-6">
-        <a href="#"
-            class="text-indigo-600 hover:text-indigo-900">{{ app()->getLocale() === 'en' ? 'Edit' : 'შესწორება' }}<span>
+        <a href="#" class="text-indigo-600 hover:text-indigo-900">{{ __('static-text.edit') }}<span>
     </td>
     <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-xl font-medium sm:pr-6">
         <form method="POST" action="{{ route('movie.delete', ['id' => $id]) }}">
             @csrf
             @method('delete')
 
-            <button
-                class="text-red-600 text-xl hover:text-red-900">{{ app()->getLocale() === 'en' ? 'Delete' : 'წაშლა' }}<a>
+            <button class="text-red-600 text-xl hover:text-red-900">{{ __('static-text.delete') }}<a>
         </form>
     </td>
 </tr>
