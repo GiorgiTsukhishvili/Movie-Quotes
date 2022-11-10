@@ -8,8 +8,8 @@
         </div>
 
         <div class="w-full h-full flex flex-col items-center">
-            <img src="{{ asset(is_null($quote->photo) ? 'images/placeholder.jpg' : $quote->photo) }}" alt="placeholder"
-                class="w-[700px] h-[386px] rounded-lx mt-[228px]">
+            <img src="{{ asset(is_null($quote->photo) ? 'images/placeholder.jpg' : 'storage/' . $quote->photo) }}"
+                alt="placeholder" class="w-[700px] h-[386px] rounded-lx mt-[228px]">
             <h1 class="text-5xl mt-[65px] my-[114px] text-white leading-11 font-normal text-center">
                 "{{ $quote->quote }}"
             </h1>

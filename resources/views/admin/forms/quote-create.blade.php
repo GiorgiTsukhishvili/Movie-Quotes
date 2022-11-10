@@ -1,12 +1,12 @@
 <x-layout>
     <x-slot name='content'>
         <div class="fixed flex flex-col gap-3.5 top-[473px] left-14">
-            <x-buttons.language-button :lang="'en'" :route="route('admin.movie-create')" />
-            <x-buttons.language-button :lang="'ka'" :route="route('admin.movie-create')" />
+            <x-buttons.language-button :lang="'en'" :route="route('admin.quote-create', ['id' => $movie])" />
+            <x-buttons.language-button :lang="'ka'" :route="route('admin.quote-create', ['id' => $movie])" />
         </div>
 
 
-        <form method="POST" action="{{ route('admin.quote-store') }}">
+        <form method="POST" action="{{ route('admin.quote-create', ['id' => $movie]) }}" enctype="multipart/form-data">
 
             @csrf
 
@@ -51,15 +51,21 @@
                                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                                 <div class="flex text-2xl text-gray-600">
-                                    <label for="file-upload"
+                                    <label for="photo"
                                         class="relative cursor-pointer rounded-md bg-white font-medium text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:text-indigo-500">
                                         <span>{{ __('static-text.file-upload') }}</span>
-                                        <input id="file-upload" name="file-upload" type="file" class="sr-only" />
+                                        <input id="photo" name="photo" type="file" class="sr-only" />
+
                                     </label>
                                     <p class="pl-1">{{ __('static-text.drug') }}</p>
                                 </div>
+
+
                             </div>
                         </div>
+                        @error('file')
+                            <p class="text-red-500 mt-2 text-xl">{{ __('static-text.field-required') }}</p>
+                        @enderror
                     </div>
                     <button
                         class="text-3xl mt-10 text-white py-4 px-5 bg-gray-400 rounded-lg">{{ __('static-text.movie-form-submit') }}</button>

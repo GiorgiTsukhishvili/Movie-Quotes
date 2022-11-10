@@ -15,6 +15,7 @@ return [
 	'quote-delete'        => 'Quote was deleted',
 	'field-required'      => 'Field is required',
 	'movie-add'           => 'Movie was created',
+	'quote-add'           => 'Quote was added',
 	'movie-form-header'   => 'Create Movie',
 	'quote-form-header'   => 'Create Quote',
 	'movie-update-header' => 'Update Movie',
