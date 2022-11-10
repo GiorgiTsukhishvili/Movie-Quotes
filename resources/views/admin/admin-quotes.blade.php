@@ -11,13 +11,13 @@
                 <div class="sm:flex sm:items-center">
                     <div class="sm:flex-auto">
                         <h1 class="text-2xl font-semibold text-gray-900">
-                            {{ app()->getLocale() === 'en' ? 'Quotes' : 'ციტატები' }}</h1>
+                            {{ __('static-text.quotes') }}</h1>
                         <p class="mt-2 text-2x text-gray-700">
-                            {{ app()->getLocale() === 'en' ? 'A list of all the Quotes' : 'ციტატების ჩამონათვალი' }}</p>
+                            {{ __('static-text.quote-list') }}</p>
                     </div>
                     <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
                         <button type="button"
-                            class="inline-flex text-2xl items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">{{ app()->getLocale() === 'en' ? 'Add Quote' : 'დაამატე ციტატა' }}</button>
+                            class="inline-flex text-2xl items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">{{ __('static-text.add-quote') }}</button>
                     </div>
                 </div>
                 <div class="mt-8  flex flex-col">
@@ -29,14 +29,12 @@
                                         <tr>
                                             <th scope="col"
                                                 class="py-3.5 pl-4 pr-3 text-left text-2xl font-semibold text-gray-900 sm:pl-6">
-                                                {{ app()->getLocale() === 'en' ? 'Quote' : 'ციტატა' }}</th>
+                                                {{ __('static-text.quote') }}</th>
                                             <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
-                                                <span
-                                                    class="sr-only">{{ app()->getLocale() === 'en' ? 'Delete' : 'წაშლა' }}</span>
+                                                <span class="sr-only">{{ __('static-text.delete') }}</span>
                                             </th>
                                             <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
-                                                <span
-                                                    class="sr-only">{{ app()->getLocale() === 'en' ? 'Edit' : 'შესწორება' }}Edit</span>
+                                                <span class="sr-only">{{ __('static-text.edit') }}Edit</span>
                                             </th>
                                         </tr>
                                     </thead>
@@ -56,7 +54,7 @@
         </div>
 
 
-
+        <x-flash-message :text="'static-text.quote-delete'" />
 
     </x-slot>
 </x-layout>

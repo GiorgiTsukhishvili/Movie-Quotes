@@ -24,3 +24,7 @@ Route::get('/movie/{id}', [MovieController::class, 'index'])->name('movie');
 Route::get('/admin/movies', [AdminMovieController::class, 'index'])->name('admin.movies');
 
 Route::get('/admin/movie/{id}/quotes', [AdminQuotesController::class, 'index'])->name('admin.quotes');
+
+Route::delete('/adming/movie/{id}/delete', [AdminMovieController::class, 'destroy'])->name('movie.delete');
+
+Route::delete('/adming/quote/{id}/delete', [AdminQuotesController::class, 'destroy'])->name('quote.delete');

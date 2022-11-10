@@ -17,4 +17,11 @@ class AdminMovieController extends Controller
 
 		return view('admin.admin-movies', ['movies' => $movies]);
 	}
+
+	public function destroy(Movie $id)
+	{
+		$id->delete();
+
+		return back()->with('message', '');
+	}
 }
