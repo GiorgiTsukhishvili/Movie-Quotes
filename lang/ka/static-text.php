@@ -16,9 +16,13 @@ return [
 	'field-required'      => 'ველი სავალდებულოა',
 	'movie-add'           => 'ფილმი დამატებულია',
 	'movie-form-header'   => 'შექმენი ფილმი',
+	'quote-form-header'   => 'შექმენი ციტატა',
 	'movie-update-header' => 'ჩაასწორე სახელი',
 	'movie-form-text-ge'  => 'ქართული სახელი',
 	'movie-form-text-en'  => 'ინგლისური სახელი',
 	'movie-form-submit'   => 'გააგზავნე',
 	'movie-updated'       => 'ფილმი განახლებულია',
+	'quote-updated'       => 'ციტატა განახლებულია',
+	'file-upload'         => 'ატვირთე სურათი',
+	'drug'                => 'ან ჩააგდე',
 ];

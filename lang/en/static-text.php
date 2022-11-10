@@ -16,9 +16,13 @@ return [
 	'field-required'      => 'Field is required',
 	'movie-add'           => 'Movie was created',
 	'movie-form-header'   => 'Create Movie',
+	'quote-form-header'   => 'Create Quote',
 	'movie-update-header' => 'Update Movie',
 	'movie-form-text-ge'  => 'Georgian Name',
 	'movie-form-text-en'  => 'English Name',
 	'movie-form-submit'   => 'Submit',
 	'movie-updated'       => 'Movie was updated',
+	'quote-updated'       => 'Quote was updated',
+	'file-upload'         => 'Upload a photo',
+	'drug'                => 'or drag and drop',
 ];
