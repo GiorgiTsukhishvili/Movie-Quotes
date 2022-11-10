@@ -29,6 +29,8 @@ Route::get('/admin/movie-create', [AdminMovieController::class, 'create'])->name
 
 Route::get('/admin/movie-update/{id}', [AdminMovieController::class, 'update'])->name('admin.movie-update');
 
+Route::view('/admin/quote-create', 'admin.forms.quote-create')->name('admin.quote-create');
+
 Route::put('/admin/movie-update/{id}', [AdminMovieController::class, 'put'])->name('admin.movie-put');
 
 Route::post('/admin/movie-create', [AdminMovieController::class, 'store'])->name('admin.movie-store');
