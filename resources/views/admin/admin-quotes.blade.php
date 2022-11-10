@@ -54,7 +54,7 @@
         </div>
 
 
-        <x-flash-message :text="'static-text.quote-delete'" />
+        <x-flash-message />
 
     </x-slot>
 </x-layout>

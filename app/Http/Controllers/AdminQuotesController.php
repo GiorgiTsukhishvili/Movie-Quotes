@@ -21,6 +21,6 @@ class AdminQuotesController extends Controller
 	{
 		$id->delete();
 
-		return back()->with('message', '');
+		return back()->with('message', 'static-text.quote-delete');
 	}
 }
