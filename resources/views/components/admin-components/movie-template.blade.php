@@ -6,7 +6,8 @@
     </td>
 
     <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-xl font-medium sm:pr-6">
-        <a href="#" class="text-indigo-600 hover:text-indigo-900">{{ __('static-text.edit') }}<span>
+        <a href="{{ route('admin.movie-update', ['id' => $id]) }}"
+            class="text-indigo-600 hover:text-indigo-900">{{ __('static-text.edit') }}</a>
     </td>
     <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-xl font-medium sm:pr-6">
         <form method="POST" action="{{ route('movie.delete', ['id' => $id]) }}">

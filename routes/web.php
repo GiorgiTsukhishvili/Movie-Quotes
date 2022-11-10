@@ -25,6 +25,14 @@ Route::get('/admin/movies', [AdminMovieController::class, 'index'])->name('admin
 
 Route::get('/admin/movie/{id}/quotes', [AdminQuotesController::class, 'index'])->name('admin.quotes');
 
+Route::get('/admin/movie-create', [AdminMovieController::class, 'create'])->name('admin.movie-create');
+
+Route::get('/admin/movie-update/{id}', [AdminMovieController::class, 'update'])->name('admin.movie-update');
+
+Route::put('/admin/movie-update/{id}', [AdminMovieController::class, 'put'])->name('admin.movie-put');
+
+Route::post('/admin/movie-create', [AdminMovieController::class, 'store'])->name('admin.movie-store');
+
 Route::delete('/adming/movie/{id}/delete', [AdminMovieController::class, 'destroy'])->name('movie.delete');
 
 Route::delete('/adming/quote/{id}/delete', [AdminQuotesController::class, 'destroy'])->name('quote.delete');
