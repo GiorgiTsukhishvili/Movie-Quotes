@@ -40,20 +40,20 @@ class DatabaseSeeder extends Seeder
 				  ->setTranslation('quote', 'en', fake()->sentence())
 				  ->setTranslation('quote', 'ka', 'რაღაც ქართული ტექსტი')
 				  ->setAttribute('movie_id', $movieName->id)
-				  ->setAttribute('photo', 'images/placeholder.jpg')->save();
+				  ->save();
 
 			$movieQuote2 = new Quote();
 			$movieQuote2
 						->setTranslation('quote', 'en', fake()->sentence())
 						->setTranslation('quote', 'ka', 'რაღაც ქართული ტექსტი')
 						->setAttribute('movie_id', $movieName2->id)
-						->setAttribute('photo', 'images/placeholder.jpg')->save();
+						->save();
 			$movieQuote3 = new Quote();
 			$movieQuote3
 						->setTranslation('quote', 'en', fake()->sentence())
 						->setTranslation('quote', 'ka', 'რაღაც ქართული ტექსტი')
 						->setAttribute('movie_id', $movieName3->id)
-						->setAttribute('photo', 'images/placeholder.jpg')->save();
+						->save();
 		}
 	}
 }

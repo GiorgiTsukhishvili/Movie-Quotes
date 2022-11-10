@@ -15,6 +15,7 @@ return [
 	'quote-delete'        => 'ციტატა წაიშალა',
 	'field-required'      => 'ველი სავალდებულოა',
 	'movie-add'           => 'ფილმი დამატებულია',
+	'quote-add' => 'ციტატა დამატებულია',
 	'movie-form-header'   => 'შექმენი ფილმი',
 	'quote-form-header'   => 'შექმენი ციტატა',
 	'movie-update-header' => 'ჩაასწორე სახელი',

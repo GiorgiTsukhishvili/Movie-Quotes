@@ -1,8 +1,8 @@
 <tr>
     <td class="py-4 pl-4 pr-3 text-sm sm:pl-6">
 
-        <img src="{{ asset(is_null($quote->photo) ? 'images/placeholder.jpg' : $quote->photo) }}" alt="Quote"
-            class="rounded-full" style="width: 100px; height: 100px">
+        <img src="{{ asset(is_null($quote->photo) ? 'images/placeholder.jpg' : 'storage/' . $quote->photo) }}"
+            alt="Quote" class="rounded-full" style="width: 100px; height: 100px">
     </td>
     <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
         <h1 class="text-xl">{{ $quote->quote }}</h1>
