@@ -31,4 +31,8 @@ return [
 	'password'            => 'Password',
 	'login'               => 'Login into account',
 	'sign-in'             => 'Sign in',
+	'logged-in'           => 'User logged in',
+	'not-authorized'      => 'Invalid email or password',
+	'hello'               => 'Hello',
+	'logout'              => 'Logout',
 ];

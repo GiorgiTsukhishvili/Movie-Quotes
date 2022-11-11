@@ -5,6 +5,7 @@
             <x-buttons.language-button :lang="'ka'" :route="route('admin.movie-create')" />
         </div>
 
+        <x-admin-components.logout />
 
         <form method="POST" action="{{ route('admin.movie-store') }}">
 

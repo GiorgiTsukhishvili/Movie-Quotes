@@ -5,6 +5,7 @@
             <x-buttons.language-button :lang="'ka'" :route="route('admin.quote-update', ['id' => $quote->id])" />
         </div>
 
+        <x-admin-components.logout />
 
         <form method="POST" action="{{ route('admin.quote-update', ['id' => $quote->id]) }}"
             enctype="multipart/form-data">
