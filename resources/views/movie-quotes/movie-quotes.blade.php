@@ -11,7 +11,7 @@
                     {{ $movie->name }}
                 </h1>
                 @foreach ($movie->quotes as $quote)
-                    <x-movie.movie-quote :quote="$quote->quote" />
+                    <x-movie.movie-quote :quote="$quote->quote" :photo="$quote->photo" />
                 @endforeach
             </div>
         </div>
