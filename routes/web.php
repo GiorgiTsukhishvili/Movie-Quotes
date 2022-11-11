@@ -31,7 +31,11 @@ Route::get('/admin/movie-update/{id}', [AdminMovieController::class, 'update'])-
 
 Route::get('/admin/quote-create/{id}', [AdminQuotesController::class, 'create'])->name('admin.quote-create');
 
+Route::get('/admin/quote-update/{id}', [AdminQuotesController::class, 'update'])->name('admin.quote-update');
+
 Route::post('/admin/quote-create/{id}', [AdminQuotesController::class, 'store'])->name('admin.quote-create');
+
+Route::put('/admin/quote-update/{id}', [AdminQuotesController::class, 'put'])->name('admin.quote-update');
 
 Route::put('/admin/movie-update/{id}', [AdminMovieController::class, 'put'])->name('admin.movie-put');
 
