@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\QuoteRequest;
+use App\Http\Requests\QuoteUpdateRequest;
 use App\Models\Movie;
 use App\Models\Quote;
 
@@ -52,5 +53,39 @@ class AdminQuotesController extends Controller
 		   ->save();
 
 		return redirect(route('admin.quotes', ['id' => $id]))->with('message', 'static-text.quote-add');
+	}
+
+	public function update(Quote $id)
+	{
+		if (!is_null(request('lang')))
+		{
+			app()->setLocale(request('lang'));
+		}
+
+		return view('admin.forms.quote-update', ['quote' => $id]);
+	}
+
+	public function put(QuoteUpdateRequest $request, Quote $id)
+	{
+		$text = $request->validated();
+
+		$newTranslatiions = ['en' => $text['eng-text'], 'ka' => $text['geo-text']];
+
+		if ($request->hasFile('photo'))
+		{
+			$text['photo'] = $request->file('photo')
+			->store('images', 'public');
+		}
+
+		if (isset($text['photo']))
+		{
+			$id->replaceTranslations('quote', $newTranslatiions)->setAttribute('photo', $text['photo'])->save();
+		}
+		else
+		{
+			$id->replaceTranslations('quote', $newTranslatiions)->save();
+		}
+
+		return redirect(route('admin.quotes', ['id' => $id->movie->id]))->with('message', 'static-text.quote-updated');
 	}
 }

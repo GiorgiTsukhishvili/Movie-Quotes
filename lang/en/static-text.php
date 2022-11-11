@@ -17,6 +17,7 @@ return [
 	'movie-add'           => 'Movie was created',
 	'quote-add'           => 'Quote was added',
 	'movie-form-header'   => 'Create Movie',
+	'quote-update-header' => 'Update Quote',
 	'quote-form-header'   => 'Create Quote',
 	'movie-update-header' => 'Update Movie',
 	'movie-form-text-ge'  => 'Georgian Name',
