@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminMovieController;
 use App\Http\Controllers\AdminQuotesController;
 use App\Http\Controllers\MovieController;
@@ -18,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [QuoteController::class, 'index'])->name('quote');
+
+Route::get('/admin/login', [AdminController::class, 'index'])->name('admin.login');
 
 Route::get('/movie/{id}', [MovieController::class, 'index'])->name('movie');
 
