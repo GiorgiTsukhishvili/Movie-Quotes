@@ -6,8 +6,11 @@
             <x-buttons.language-button :lang="'ka'" :route="route('admin.quotes', ['id' => $movie->id])" />
         </div>
 
+        <x-admin-components.logout />
+
+
         <div class="min-h-screen flex justify-center items-center ">
-            <div class="px-4 sm:px-6 lg:px-8 pt-6 bg-white mt-8 rounded-lg" style="width:1200px">
+            <div class="px-4 sm:px-6 lg:px-8 pt-6 bg-white mt-24 rounded-lg" style="width:1200px">
                 <div class="sm:flex sm:items-center">
                     <div class="sm:flex-auto">
                         <h1 class="text-2xl font-semibold text-gray-900">

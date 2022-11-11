@@ -22,28 +22,34 @@ Route::get('/', [QuoteController::class, 'index'])->name('quote');
 
 Route::get('/admin/login', [AdminController::class, 'index'])->name('admin.login');
 
+Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.login');
+
 Route::get('/movie/{id}', [MovieController::class, 'index'])->name('movie');
 
-Route::get('/admin/movies', [AdminMovieController::class, 'index'])->name('admin.movies');
+Route::middleware(['auth'])->group(function () {
+	Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
-Route::get('/admin/movie/{id}/quotes', [AdminQuotesController::class, 'index'])->name('admin.quotes');
+	Route::get('/admin/movies', [AdminMovieController::class, 'index'])->name('admin.movies');
 
-Route::get('/admin/movie-create', [AdminMovieController::class, 'create'])->name('admin.movie-create');
+	Route::get('/admin/movie/{id}/quotes', [AdminQuotesController::class, 'index'])->name('admin.quotes');
 
-Route::get('/admin/movie-update/{id}', [AdminMovieController::class, 'update'])->name('admin.movie-update');
+	Route::get('/admin/movie-create', [AdminMovieController::class, 'create'])->name('admin.movie-create');
 
-Route::get('/admin/quote-create/{id}', [AdminQuotesController::class, 'create'])->name('admin.quote-create');
+	Route::get('/admin/movie-update/{id}', [AdminMovieController::class, 'update'])->name('admin.movie-update');
 
-Route::get('/admin/quote-update/{id}', [AdminQuotesController::class, 'update'])->name('admin.quote-update');
+	Route::get('/admin/quote-create/{id}', [AdminQuotesController::class, 'create'])->name('admin.quote-create');
 
-Route::post('/admin/quote-create/{id}', [AdminQuotesController::class, 'store'])->name('admin.quote-create');
+	Route::get('/admin/quote-update/{id}', [AdminQuotesController::class, 'update'])->name('admin.quote-update');
 
-Route::put('/admin/quote-update/{id}', [AdminQuotesController::class, 'put'])->name('admin.quote-update');
+	Route::post('/admin/quote-create/{id}', [AdminQuotesController::class, 'store'])->name('admin.quote-create');
 
-Route::put('/admin/movie-update/{id}', [AdminMovieController::class, 'put'])->name('admin.movie-put');
+	Route::put('/admin/quote-update/{id}', [AdminQuotesController::class, 'put'])->name('admin.quote-update');
 
-Route::post('/admin/movie-create', [AdminMovieController::class, 'store'])->name('admin.movie-store');
+	Route::put('/admin/movie-update/{id}', [AdminMovieController::class, 'put'])->name('admin.movie-put');
 
-Route::delete('/adming/movie/{id}/delete', [AdminMovieController::class, 'destroy'])->name('movie.delete');
+	Route::post('/admin/movie-create', [AdminMovieController::class, 'store'])->name('admin.movie-store');
 
-Route::delete('/adming/quote/{id}/delete', [AdminQuotesController::class, 'destroy'])->name('quote.delete');
+	Route::delete('/adming/movie/{id}/delete', [AdminMovieController::class, 'destroy'])->name('movie.delete');
+
+	Route::delete('/adming/quote/{id}/delete', [AdminQuotesController::class, 'destroy'])->name('quote.delete');
+});
