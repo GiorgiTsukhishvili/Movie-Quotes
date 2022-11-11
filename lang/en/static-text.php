@@ -27,4 +27,8 @@ return [
 	'quote-updated'       => 'Quote was updated',
 	'file-upload'         => 'Upload a photo',
 	'drug'                => 'or drag and drop',
+	'email'               => 'Email Adress',
+	'password'            => 'Password',
+	'login'               => 'Login into account',
+	'sign-in'             => 'Sign in',
 ];
