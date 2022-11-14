@@ -4,7 +4,7 @@
 
 ---
 
-Movie quores app that has two pages, one which gives random quote from movie and one for movie itselft where user can view all quotes from the given movie.
+Movie quotes app that has two pages, one which gives random quote from movie and one for movie itselft where user can view all quotes from the given movie.
 
 #
 
@@ -32,7 +32,8 @@ Movie quores app that has two pages, one which gives random quote from movie and
 ### Tech Stack
 
 -   <img src="readme/assets/laravel.png" height="18" style="position: relative; top: 4px" /> [Laravel@9.x](https://laravel.com/docs/9.x) - back-end framework
--   <img src="readme/assets/spatie.png" height="19" style="position: relative; top: 4px" /> [Spatie Translatable](https://github.com/spatie/laravel-translatable) - package for translation
+-   <img src="readme/assets/spatie.png" height="18" style="position: relative; top: 4px" /> [Spatie Translatable](https://github.com/spatie/laravel-translatable) - package for translation
+-   <img src="readme/assets/vite.png" height="18" style="position: relative; top: 4px; width: 18px" /> [Vite](https://vitejs.dev/guide/) - rapid development tool
 
 #
 
@@ -90,17 +91,29 @@ And now you should provide **.env** file all the necessary environment variables
 
 #
 
-##### Now, you should be good to go!
+after setting up **.env** file, execute:
 
-#
+```sh
+php artisan config:cache
+```
 
-### Migration
+in order to cache environment variables.
 
-if you've completed getting started section, then migrating database if fairly simple process, just execute:
+5\. Now execute in the root of you project following:
+
+```sh
+  php artisan key:generate
+```
+
+Which generates auth key.
+
+6\. If you've completed everything so far, then migrating database if fairly simple process, just execute:
 
 ```sh
 php artisan migrate
 ```
+
+##### Now, you should be good to go!
 
 #
 
@@ -112,20 +125,11 @@ You can run Laravel's built-in development server by executing:
   php artisan serve
 ```
 
-when working on JS you may run:
+if you wish to see changes after changing styles with Tailwind CSS, execute:
 
 ```sh
   npm run dev
 ```
-
-it builds your js files into executable scripts.
-If you want to watch files during development, execute instead:
-
-```sh
-  npm run watch
-```
-
-it will watch JS files and on change it'll rebuild them, so you don't have to manually build them.
 
 #
 
