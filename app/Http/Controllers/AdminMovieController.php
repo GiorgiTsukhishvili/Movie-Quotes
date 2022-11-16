@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\MovieRequest;
 use App\Models\Movie;
+use App\Models\Quote;
 
 class AdminMovieController extends Controller
 {
@@ -17,6 +18,16 @@ class AdminMovieController extends Controller
 		$movies = Movie::all();
 
 		return view('admin.admin-movies', ['movies' => $movies]);
+	}
+
+	public function quotes()
+	{
+		if (!is_null(request('lang')))
+		{
+			app()->setLocale(request('lang'));
+		}
+
+		return view('admin.all-quotes', ['quotes' => Quote::all()]);
 	}
 
 	public function destroy(Movie $id)

@@ -35,6 +35,8 @@ Route::middleware(['auth'])->group(function () {
 
 	Route::get('/admin/movie-create', [AdminMovieController::class, 'create'])->name('admin.movie-create');
 
+	Route::get('/admin/all-quotes', [AdminMovieController::class, 'quotes'])->name('admin.all-quotes');
+
 	Route::get('/admin/movie-update/{id}', [AdminMovieController::class, 'update'])->name('admin.movie-update');
 
 	Route::get('/admin/quote-create/{id}', [AdminQuotesController::class, 'create'])->name('admin.quote-create');
