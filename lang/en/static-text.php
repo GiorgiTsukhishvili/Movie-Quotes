@@ -45,4 +45,5 @@ return [
 	'all-movie'           => 'All Movies',
 	'all-quotes'          => 'All Quotes',
 	'remove-accept'       => 'Are you sure you want to delete this?',
+	'choose-movie'        => 'Choose Movie',
 ];
