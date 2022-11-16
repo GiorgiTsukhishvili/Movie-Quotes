@@ -35,4 +35,5 @@ return [
 	'not-authorized'      => 'Invalid email or password',
 	'hello'               => 'Hello',
 	'logout'              => 'Logout',
+	'no-quotes'           => 'No Quote Yet',
 ];
