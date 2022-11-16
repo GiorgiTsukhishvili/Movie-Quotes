@@ -41,4 +41,5 @@ return [
 	'your-password'       => 'Your Passowrd',
 	'text'                => 'Text',
 	'file-uploaded'       => 'File was uploaded',
+	'go-back'             => 'Back',
 ];

@@ -7,6 +7,8 @@
 
         <x-admin-components.logout />
 
+        <x-buttons.go-back :route="route('admin.movies')" />
+
         <form method="POST" action="{{ route('admin.movie-store') }}?lang={{ app()->getLocale() }}">
 
             @csrf

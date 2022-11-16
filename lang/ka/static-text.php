@@ -40,4 +40,5 @@ return [
 	'your-password'       => 'თქვენი პაროლი',
 	'text'                => 'ტექსტი',
 	'file-uploaded'       => 'ფაილი ატვირთულია',
+	'go-back'             => 'უკან',
 ];
