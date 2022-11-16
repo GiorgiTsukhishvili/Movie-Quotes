@@ -21,7 +21,7 @@
             </div>
         @else
             <div class="w-full h-[100vh] flex flex-col items-center justify-center">
-                <h1 class="text-3xl text-white">No Quote Yet</h1>
+                <h1 class="text-3xl text-white">{{ __('static-text.no-quotes') }}</h1>
             </div>
         @endif
     </x-slot>

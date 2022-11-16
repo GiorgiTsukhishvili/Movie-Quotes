@@ -13,9 +13,7 @@ class QuoteController extends Controller
 			app()->setLocale(request('lang'));
 		}
 
-		$randomNumber = mt_rand(0, count(Quote::all()));
-
-		$randomQuote = Quote::find($randomNumber);
+		$randomQuote = Quote::inRandomOrder()->first();
 
 		return view('movie-quotes.single-quote', ['quote' => $randomQuote]);
 	}
