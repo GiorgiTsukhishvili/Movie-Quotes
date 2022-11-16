@@ -36,4 +36,5 @@ return [
 	'hello'               => 'Hello',
 	'logout'              => 'Logout',
 	'no-quotes'           => 'No Quote Yet',
+	'login-error'         => 'Email or Password not found',
 ];
