@@ -7,6 +7,8 @@
 
         <x-admin-components.logout />
 
+        <x-admin-components.navbar />
+
         <div class="min-h-screen flex justify-center items-center ">
             <div class="px-4 sm:px-6 lg:px-8 pt-6 bg-white min-h-[800px] mt-10 rounded-lg w-[1200px]">
                 <div class="sm:flex sm:items-center">
