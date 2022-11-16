@@ -42,4 +42,6 @@ return [
 	'text'                => 'Text',
 	'file-uploaded'       => 'File was uploaded',
 	'go-back'             => 'Back',
+	'all-movie'           => 'All Movies',
+	'all-quotes'          => 'All Quotes',
 ];

@@ -8,10 +8,11 @@
 
         <x-admin-components.logout />
 
+        <x-admin-components.navbar />
 
         <div class="min-h-screen flex justify-center items-center ">
-            <div class="px-4 sm:px-6 lg:px-8 pt-6 bg-white mt-24 rounded-lg" style="width:1200px">
-                <div class="sm:flex sm:items-center">
+            <div class="px-4 sm:px-6 lg:px-8 pt-6 bg-white mt-24 rounded-lg min-h-[800px]" style="width:1200px">
+                <div class="sm:flex sm:items-center ">
                     <div class="sm:flex-auto">
                         <h1 class="text-2xl font-semibold text-gray-900">
                             {{ __('static-text.quotes') }}</h1>
