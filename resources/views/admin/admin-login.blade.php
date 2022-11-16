@@ -19,6 +19,7 @@
                             class="block text-2xl font-medium text-gray-700">{{ __('static-text.email') }}</label>
                         <div class="mt-1">
                             <input id="email" name="email" type="email" value="{{ old('email') }}" required
+                                placeholder="{{ __('static-text.your-email') }}"
                                 class="block w-full appearance-none rounded-md h-20 text-3xl border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 ">
                             @if ($errors->any())
                                 <p class="text-red-600 text-2xl mt-2">{{ __('static-text.login-error') }}</p>
@@ -31,6 +32,7 @@
                             class="block text-2xl font-medium text-gray-700">{{ __('static-text.password') }}</label>
                         <div class="mb-10">
                             <input id="password" name="password" type="password" required
+                                placeholder="{{ __('static-text.your-password') }}"
                                 class="block w-full appearance-none rounded-md border h-20 text-3xl border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 ">
                         </div>
                     </div>

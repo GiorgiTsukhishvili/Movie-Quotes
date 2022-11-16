@@ -37,4 +37,7 @@ return [
 	'logout'              => 'Logout',
 	'no-quotes'           => 'No Quote Yet',
 	'login-error'         => 'Email or Password not found',
+	'your-email'          => 'Your Email',
+	'your-password'       => 'Your Passowrd',
+	'text'                => 'Text',
 ];
