@@ -11,18 +11,18 @@
             <div class=" bg-white w-187.5 pt-8 pb-12 px-4 shadow rounded-lg " style="height: 600px">
                 <h1 class="text-4xl font-bold text-center mt-10">{{ __('static-text.login') }}</h1>
 
-                <form class="space-y-6" action="{{ route('admin.login') }}" method="POST">
+                <form class="space-y-6" action="{{ route('admin.login') }}?lang={{ app()->getLocale() }}" method="POST">
                     @csrf
 
                     <div class="my-10">
                         <label for="email"
                             class="block text-2xl font-medium text-gray-700">{{ __('static-text.email') }}</label>
                         <div class="mt-1">
-                            <input id="email" name="email" type="email"
+                            <input id="email" name="email" type="email" value="{{ old('email') }}"
                                 class="block w-full appearance-none rounded-md h-20 text-3xl border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 ">
-                            @error('email')
-                                <p class="text-red-600 text-2xl mt-2">{{ __($message) }}</p>
-                            @enderror
+                            @if ($errors->any())
+                                <p class="text-red-600 text-2xl mt-2">{{ __('static-text.login-error') }}</p>
+                            @endif
                         </div>
                     </div>
 
