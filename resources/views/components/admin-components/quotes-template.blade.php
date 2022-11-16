@@ -9,11 +9,11 @@
     </td>
 
     <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-        <a href="{{ route('admin.quote-update', ['id' => $quote->id]) }}"
+        <a href="{{ route('admin.quote-update', ['id' => $quote->id]) }}?lang={{ app()->getLocale() }}"
             class="text-indigo-600 text-xl hover:text-indigo-900">{{ __('static-text.edit') }}<span>
     </td>
     <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-        <form method="POST" action="{{ route('quote.delete', ['id' => $quote->id]) }}">
+        <form method="POST" action="{{ route('quote.delete', ['id' => $quote->id]) }}?lang={{ app()->getLocale() }}">
             @csrf
             @method('delete')
 

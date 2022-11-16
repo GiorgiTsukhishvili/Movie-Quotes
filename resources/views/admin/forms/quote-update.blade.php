@@ -7,6 +7,8 @@
 
         <x-admin-components.logout />
 
+        <x-buttons.go-back :route="route('admin.quotes', ['id' => $quote->movie->id])" />
+
         <form method="POST"
             action="{{ route('admin.quote-update', ['id' => $quote->id]) }}?lang={{ app()->getLocale() }}"
             enctype="multipart/form-data">
