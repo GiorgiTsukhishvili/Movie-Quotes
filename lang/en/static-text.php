@@ -40,4 +40,5 @@ return [
 	'your-email'          => 'Your Email',
 	'your-password'       => 'Your Passowrd',
 	'text'                => 'Text',
+	'file-uploaded'       => 'File was uploaded',
 ];

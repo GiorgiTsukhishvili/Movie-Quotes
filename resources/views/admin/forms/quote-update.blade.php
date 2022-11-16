@@ -47,7 +47,7 @@
                     </div>
 
 
-                    <div class="mt-1 pt-5  sm:mt-0">
+                    <div class="mt-1 pt-5  sm:mt-0" x-data="{ message: '' }">
                         <div
                             class="flex w-full justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
                             <div class="space-y-1 h-36 text-center">
@@ -55,17 +55,22 @@
                                 <div class="flex text-2xl text-gray-600">
                                     <label for="photo"
                                         class="relative cursor-pointer rounded-md bg-white font-medium text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:text-indigo-500">
-                                        <span>{{ __('static-text.file-upload') }}</span>
-                                        <input id="photo" name="photo" type="file" class="sr-only"
-                                            value="{{ $quote->photo }}" />
+                                        <span
+                                            class="w-[750px] h-[185px] absolute left-[-350px] top-[-70px] flex justify-center items-center">{{ __('static-text.file-upload') }}</span>
+                                        <input id="photo" name="photo" type="file" class="sr-only w-full"
+                                            x-model="message" value="{{ $quote->photo }}" />
 
                                     </label>
-                                    <p class="pl-1">{{ __('static-text.drug') }}</p>
                                 </div>
-
-
                             </div>
                         </div>
+
+                        <span x-show="message" class="mt-2 text-2xl">{{ __('static-text.file-uploaded') }}</span>
+
+
+                        <img src="{{ asset('storage/' . $quote->photo) }}" alt="Quote"
+                            class=" w-44 rounded-lx mt-5">
+
                         @error('file')
                             <p class="text-red-500 mt-2 text-xl">{{ __('static-text.field-required') }}</p>
                         @enderror
