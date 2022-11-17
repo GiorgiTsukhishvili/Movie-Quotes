@@ -49,6 +49,10 @@ class AdminQuotesController extends Controller
 
 public function allQuoteStore(AllQuotesRequest $request)
 {
+	if (!is_null(request('lang')))
+	{
+		app()->setLocale(request('lang'));
+	}
 	$text = $request->validated();
 
 	if ($request->hasFile('photo'))
@@ -63,7 +67,7 @@ public function allQuoteStore(AllQuotesRequest $request)
 	   ->setTranslation('quote', 'ka', $text['geo-text'])->setAttribute('movie_id', $text['movie'])->setAttribute('photo', $text['photo'])
 	   ->save();
 
-	return redirect(route('admin.all-quotes'))->with('message', 'static-text.quote-add');
+	return redirect(route('admin.all-quotes', ['lang' => app()->getLocale()]))->with('message', 'static-text.quote-add');
 }
 
 	public function create($id)
@@ -78,6 +82,11 @@ public function allQuoteStore(AllQuotesRequest $request)
 
 	public function store(QuoteRequest $request, $id)
 	{
+		if (!is_null(request('lang')))
+		{
+			app()->setLocale(request('lang'));
+		}
+
 		$text = $request->validated();
 
 		if ($request->hasFile('photo'))
@@ -92,7 +101,7 @@ public function allQuoteStore(AllQuotesRequest $request)
 		   ->setTranslation('quote', 'ka', $text['geo-text'])->setAttribute('movie_id', $id)->setAttribute('photo', $text['photo'])
 		   ->save();
 
-		return redirect(route('admin.quotes', ['id' => $id]))->with('message', 'static-text.quote-add');
+		return redirect(route('admin.quotes', ['id' => $id, 'lang' => app()->getLocale()]))->with('message', 'static-text.quote-add');
 	}
 
 	public function update(Quote $id)
@@ -107,9 +116,13 @@ public function allQuoteStore(AllQuotesRequest $request)
 
 	public function put(QuoteUpdateRequest $request, Quote $id)
 	{
+		if (!is_null(request('lang')))
+		{
+			app()->setLocale(request('lang'));
+		}
+
 		$text = $request->validated();
 
-		ddd($text);
 		$newTranslatiions = ['en' => $text['eng-text'], 'ka' => $text['geo-text']];
 
 		if ($request->hasFile('photo'))
@@ -127,6 +140,6 @@ public function allQuoteStore(AllQuotesRequest $request)
 			$id->replaceTranslations('quote', $newTranslatiions)->save();
 		}
 
-		return redirect(route('admin.quotes', ['id' => $id->movie->id]))->with('message', 'static-text.quote-updated');
+		return redirect(route('admin.quotes', ['id' => $id->movie->id, 'lang' => app()->getLocale()]))->with('message', 'static-text.quote-updated');
 	}
 }
