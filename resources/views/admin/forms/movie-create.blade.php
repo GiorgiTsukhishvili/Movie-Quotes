@@ -23,7 +23,7 @@
                             class="block  mb-4 text-3xl font-medium text-gray-700">{{ __('static-text.movie-form-text-ge') }}</label>
                         <div class="mt-1">
                             <input type="text" name="geo-text" id="geo-text"
-                                placeholder="{{ __('static-text.text') }}"
+                                placeholder="{{ __('static-text.movie-form-text-ge') }}"
                                 class="block w-187.5 h-20 text-3xl rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 ">
                             @error('geo-text')
                                 <p class="text-red-500 mt-2 text-xl">{{ __('static-text.field-required') }}</p>
@@ -36,7 +36,7 @@
                             class="block mb-4  text-3xl font-medium text-gray-700">{{ __('static-text.movie-form-text-en') }}</label>
                         <div class="mt-1">
                             <input type="text" name="eng-text" id="eng-text"
-                                placeholder="{{ __('static-text.text') }}"
+                                placeholder="{{ __('static-text.movie-form-text-en') }}"
                                 class="block w-187.5 h-20 text-3xl rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 ">
                             @error('eng-text')
                                 <p class="text-red-500 mt-2 text-xl">{{ __('static-text.field-required') }}</p>
