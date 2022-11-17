@@ -7,7 +7,11 @@
 
     <title>Movie Quotes</title>
     <script src="//unpkg.com/alpinejs" defer></script>
-
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     @vite('resources/css/app.css')
 

@@ -13,7 +13,7 @@
             class="text-indigo-600 text-xl hover:text-indigo-900">{{ __('static-text.edit') }}<span>
     </td>
     <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-        <div x-data="{ open: false }">
+        <div x-data="{ open: false }" x-cloak>
 
             <div x-show="open" @click="open = false"
                 class="fixed top-0 left-0 z-10 h-screen w-screen bg-gray-200 opacity-25">
