@@ -48,6 +48,11 @@ class AdminMovieController extends Controller
 
 	public function store(MovieRequest $request)
 	{
+		if (!is_null(request('lang')))
+		{
+			app()->setLocale(request('lang'));
+		}
+
 		$text = $request->validated();
 
 		$movieName = new Movie();
@@ -56,17 +61,22 @@ class AdminMovieController extends Controller
 		   ->setTranslation('name', 'ka', $text['geo-text'])
 		   ->save();
 
-		return redirect(route('admin.movies'))->with('message', 'static-text.movie-add');
+		return redirect(route('admin.movies', ['lang' => app()->getLocale()]))->with('message', 'static-text.movie-add');
 	}
 
 	public function put(MovieRequest $request, Movie $id)
 	{
+		if (!is_null(request('lang')))
+		{
+			app()->setLocale(request('lang'));
+		}
+
 		$text = $request->validated();
 
 		$newTranslatiions = ['en' => $text['eng-text'], 'ka' => $text['geo-text']];
 
 		$id->replaceTranslations('name', $newTranslatiions)->save();
 
-		return redirect(route('admin.movies'))->with('message', 'static-text.movie-updated');
+		return redirect(route('admin.movies', ['lang' => app()->getLocale()]))->with('message', 'static-text.movie-updated');
 	}
 }
