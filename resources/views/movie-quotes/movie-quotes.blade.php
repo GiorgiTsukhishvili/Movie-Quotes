@@ -10,7 +10,7 @@
             <div class="w-187.5 m-auto">
                 <div class="w-full h-full flex flex-col items-start">
 
-                    <h1 class="text-5xl mt-[79px] mb-[82px]  text-white leading-11 font-normal text-center ">
+                    <h1 class="text-5xl break-words w-[650px] mt-[79px] mb-[82px]  text-white leading-11 font-normal ">
                         {{ $movie->name }}
                     </h1>
 
