@@ -27,7 +27,7 @@ class AdminQuotesController extends Controller
 			app()->setLocale(request('lang'));
 		}
 
-		return view('admin.all-quotes', ['quotes' => Quote::all(), 'movieCount' => count(Movie::all())]);
+		return view('admin.all-quotes', ['quotes' => Quote::all(), 'movieCount' => Movie::count()]);
 	}
 
 	public function destroy(Quote $id)
