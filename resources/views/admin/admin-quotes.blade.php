@@ -24,8 +24,8 @@
                             class="inline-flex text-2xl items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">{{ __('static-text.add-quote') }}</a>
                     </div>
                 </div>
-                <div class="mt-8  flex flex-col">
-                    <div class="my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:mx-8">
+                <div class="mt-8 flex flex-col ">
+                    <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
                             <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
                                 <table class="min-w-full divide-y divide-gray-300">
