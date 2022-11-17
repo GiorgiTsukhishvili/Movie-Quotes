@@ -49,7 +49,7 @@
                     </div>
 
 
-                    <div class="mt-1 pt-5  sm:mt-0" x-data="{ message: '' }">
+                    <div class="mt-1 pt-5  sm:mt-0" x-data="{ message: '' }" x-cloak>
                         <div
                             class="flex w-full justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
                             <div class="space-y-1 h-36 text-center">

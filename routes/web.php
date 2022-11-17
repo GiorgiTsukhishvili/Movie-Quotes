@@ -33,9 +33,15 @@ Route::middleware(['auth'])->group(function () {
 
 	Route::get('/admin/movie/{id}/quotes', [AdminQuotesController::class, 'index'])->name('admin.quotes');
 
+	Route::get('/admin/movie/{id}/quotes', [AdminQuotesController::class, 'index'])->name('admin.quotes');
+
 	Route::get('/admin/movie-create', [AdminMovieController::class, 'create'])->name('admin.movie-create');
 
-	Route::get('/admin/all-quotes', [AdminMovieController::class, 'quotes'])->name('admin.all-quotes');
+	Route::get('/admin/all-quotes', [AdminQuotesController::class, 'quotes'])->name('admin.all-quotes');
+
+	Route::get('/admin/all-quotes-form', [AdminQuotesController::class, 'allQuoteForm'])->name('admin.all-quotes-form');
+
+	Route::post('/admin/all-quotes-create', [AdminQuotesController::class, 'allQuoteStore'])->name('admin.all-quotes-create');
 
 	Route::get('/admin/movie-update/{id}', [AdminMovieController::class, 'update'])->name('admin.movie-update');
 

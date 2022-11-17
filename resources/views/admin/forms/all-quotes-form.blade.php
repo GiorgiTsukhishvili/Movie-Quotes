@@ -1,15 +1,15 @@
 <x-layout>
     <x-slot name='content'>
         <div class="fixed flex flex-col gap-3.5 top-[473px] left-14">
-            <x-buttons.language-button :lang="'en'" :route="route('admin.quote-create', ['id' => $movie])" />
-            <x-buttons.language-button :lang="'ka'" :route="route('admin.quote-create', ['id' => $movie])" />
+            <x-buttons.language-button :lang="'en'" :route="route('admin.all-quotes-form')" />
+            <x-buttons.language-button :lang="'ka'" :route="route('admin.all-quotes-form')" />
         </div>
 
         <x-admin-components.logout />
 
-        <x-buttons.go-back :route="route('admin.quotes', ['id' => $movie])" />
+        <x-buttons.go-back :route="route('admin.all-quotes')" />
 
-        <form method="POST" action="{{ route('admin.quote-create', ['id' => $movie]) }}?lang={{ app()->getLocale() }}"
+        <form method="POST" action="{{ route('admin.all-quotes-create') }}?lang={{ app()->getLocale() }}"
             enctype="multipart/form-data">
 
             @csrf
@@ -43,6 +43,20 @@
                                 <p class="text-red-500 mt-2 text-xl">{{ __('static-text.field-required') }}</p>
                             @enderror
                         </div>
+                    </div>
+
+                    <div class="mt-1 pt-5  sm:mt-0">
+                        <label for="movie"
+                            class="block mb-4  text-3xl font-medium text-gray-700">{{ __('static-text.choose-movie') }}</label>
+                        <select name="movie" id="movie"
+                            class="block w-187.5 h-20 text-3xl rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 ">
+
+                            @foreach ($movies as $movie)
+                                <option value="{{ $movie->id }}">{{ $movie->name }}</option>
+                            @endforeach
+
+                        </select>
+
                     </div>
 
 

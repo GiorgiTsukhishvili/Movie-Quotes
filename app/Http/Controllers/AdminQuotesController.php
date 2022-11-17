@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AllQuotesRequest;
 use App\Http\Requests\QuoteRequest;
 use App\Http\Requests\QuoteUpdateRequest;
 use App\Models\Movie;
@@ -19,12 +20,51 @@ class AdminQuotesController extends Controller
 		return view('admin.admin-quotes', ['movie' => $id]);
 	}
 
+	public function quotes()
+	{
+		if (!is_null(request('lang')))
+		{
+			app()->setLocale(request('lang'));
+		}
+
+		return view('admin.all-quotes', ['quotes' => Quote::all(), 'movieCount' => Movie::count()]);
+	}
+
 	public function destroy(Quote $id)
 	{
 		$id->delete();
 
 		return back()->with('message', 'static-text.quote-delete');
 	}
+
+	public function allQuoteForm()
+	{
+		if (!is_null(request('lang')))
+		{
+			app()->setLocale(request('lang'));
+		}
+
+		return view('admin.forms.all-quotes-form', ['movies' => Movie::all()]);
+	}
+
+public function allQuoteStore(AllQuotesRequest $request)
+{
+	$text = $request->validated();
+
+	if ($request->hasFile('photo'))
+	{
+		$text['photo'] = $request->file('photo')
+		->store('images', 'public');
+	}
+
+	$quote = new Quote();
+	$quote
+	   ->setTranslation('quote', 'en', $text['eng-text'])
+	   ->setTranslation('quote', 'ka', $text['geo-text'])->setAttribute('movie_id', $text['movie'])->setAttribute('photo', $text['photo'])
+	   ->save();
+
+	return redirect(route('admin.all-quotes'))->with('message', 'static-text.quote-add');
+}
 
 	public function create($id)
 	{
@@ -69,6 +109,7 @@ class AdminQuotesController extends Controller
 	{
 		$text = $request->validated();
 
+		ddd($text);
 		$newTranslatiions = ['en' => $text['eng-text'], 'ka' => $text['geo-text']];
 
 		if ($request->hasFile('photo'))
